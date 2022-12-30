@@ -1,7 +1,6 @@
 #ifndef LISTNODE_H
 #define LISTNODE_H
 #include "../Node/Node.h"
-#include <iostream>
 template<typename T> class ListNode :
     public Node<T> {
     
@@ -9,9 +8,7 @@ template<typename T> class ListNode :
     
 public:
     ListNode() : Node<T>(0), m_next(nullptr) {}
-    ~ListNode() {
-        std::cerr << "Deleting node: " << this->get() << "\n";
-    }
+  
     ListNode(T val) : Node<T>(val), m_next(nullptr) {}
 
     ListNode(T val, ListNode<T>* next) : Node<T>(val), m_next(next) {}
