@@ -11,7 +11,7 @@ template<typename T> class Node{
 public:
     Node<T>(T val) : m_value(val){} 
 
-    T get() { return this->m_value; }
+    T& get() { return this->m_value; }
     void set(T val){
         m_value = val;
     } 

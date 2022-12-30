@@ -77,7 +77,7 @@ public:
         return *this;
     }
 
-    T get(int index=0) {
+    T& get(int index) {
         if (m_length == 0 || index >= m_length || index < 0) 
             throw std::out_of_range("Index out of range of list object");
         int i = 0;
@@ -89,6 +89,11 @@ public:
         }
         return tmp->get();
     }
+
+    T& operator[](int index) {
+       return this->get(index);
+    }
+
     size_t size() const { return m_length; }
     ListNode<T>* head() const { return m_head; }
     ListNode<T>* tail() const { return m_tail; }
