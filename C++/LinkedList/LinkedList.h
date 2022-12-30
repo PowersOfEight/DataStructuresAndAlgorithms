@@ -56,8 +56,8 @@ public:
             m_length = 0;
         }
 
-        if (other->head()) {
-            ListNode<T>* currentOther = other->head();
+        if (other.head()) {
+            ListNode<T>* currentOther = other.head();
             m_head = new ListNode<T>(currentOther->get());
             ListNode<T>* currentThis = m_head;
             while (currentOther->next()) {
@@ -78,7 +78,7 @@ public:
     }
 
     T get(int index=0) {
-        if (m_length == 0 || index >= m_length) 
+        if (m_length == 0 || index >= m_length || index < 0) 
             throw std::out_of_range("Index out of range of list object");
         int i = 0;
         ListNode<T>* tmp;
@@ -89,9 +89,9 @@ public:
         }
         return tmp->get();
     }
-    size_t size() { return m_length; }
-    ListNode<T>* head() { return m_head; }
-    ListNode<T>* tail() { return m_tail; }
+    size_t size() const { return m_length; }
+    ListNode<T>* head() const { return m_head; }
+    ListNode<T>* tail() const { return m_tail; }
 
     void pushBack(T val) {
         if (m_head && m_tail) {

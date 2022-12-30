@@ -8,7 +8,7 @@ template<typename T> class ListNode :
     
 public:
     ListNode() : Node<T>(0), m_next(nullptr) {}
-  
+
     ListNode(T val) : Node<T>(val), m_next(nullptr) {}
 
     ListNode(T val, ListNode<T>* next) : Node<T>(val), m_next(next) {}
