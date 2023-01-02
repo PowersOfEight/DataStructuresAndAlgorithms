@@ -1,7 +1,6 @@
 #ifndef TREENODE_H
 #define TREENODE_H
 #include "../Node/Node.h"
-#include <iostream>
 template<typename T> class TreeNode : 
     public Node<T> {
         TreeNode<T>* m_left;
