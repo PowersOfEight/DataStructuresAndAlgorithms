@@ -9,10 +9,9 @@ template<typename T> class Node{
     T m_value;
 
 public:
-    Node<T>(T val) : m_value(val){} 
-
-    T& get() { return this->m_value; }
-    void set(T val){
+    Node<T>(T val) : m_value(val){}
+    T get() const { return m_value; }
+    void set(T& val){
         m_value = val;
     } 
 };

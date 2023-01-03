@@ -13,16 +13,22 @@ public:
         Node<T>(val), m_left(nullptr), m_right(nullptr) {}
     ~TreeNode() {
         if (m_left){
-            m_left->~TreeNode();
             delete m_left;
         } 
         if (m_right){
-            m_right->~TreeNode();
             delete m_right;
         }
+        printf("Deleting node with value: %d\n",this->get());
     }
-    void setLeft(TreeNode<T>* left) { this->m_left = left; }
-    void setRight(TreeNode<T>* right) { this->m_right = right; }
+    
+    void setLeft(TreeNode<T>* left) { 
+        if(m_left) m_left->~TreeNode();
+        this->m_left = left;
+    }
+    void setRight(TreeNode<T>* right) { 
+        if(m_right) m_right->~TreeNode();
+        this->m_right = right; 
+    }
     TreeNode<T>* left() const { return m_left; }
     TreeNode<T>* right() const { return m_right; }
 };
