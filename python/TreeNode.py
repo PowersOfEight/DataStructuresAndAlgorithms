@@ -4,6 +4,7 @@ class TreeNode(Node):
     left: 'TreeNode'
     right: 'TreeNode'
     
+    
     def setLeft(self, left: 'TreeNode'):
         self.left = left
         
