@@ -1,7 +1,6 @@
 #ifndef TREENODE_H
 #define TREENODE_H
 #include "../Node/Node.h"
-#include <iostream>
 using namespace std;
 
 template<typename T> class TreeNode : 
@@ -18,9 +17,7 @@ public:
         if (m_right){
             delete m_right;
         }
-        printf("Deleting node with value: %d\n",this->get());
     }
-    
     void setLeft(TreeNode<T>* left) { 
         if(m_left) m_left->~TreeNode();
         this->m_left = left;
