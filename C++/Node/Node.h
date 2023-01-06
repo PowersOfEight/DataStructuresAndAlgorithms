@@ -10,7 +10,7 @@ template<typename T> class Node{
 
 public:
     Node<T>(T val) : m_value(val){}
-    T get() const { return m_value; }
+    T& get() { return m_value; }
     void set(T& val){
         m_value = val;
     } 
