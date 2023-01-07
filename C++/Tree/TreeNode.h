@@ -19,11 +19,11 @@ public:
         }
     }
     void setLeft(TreeNode<T>* left) { 
-        if(m_left) m_left->~TreeNode();
+        if(m_left) delete m_left;
         this->m_left = left;
     }
     void setRight(TreeNode<T>* right) { 
-        if(m_right) m_right->~TreeNode();
+        if(m_right) delete m_right;
         this->m_right = right; 
     }
     TreeNode<T>* left() const { return m_left; }
