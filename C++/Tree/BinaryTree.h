@@ -43,13 +43,13 @@ public:
         }
         ++m_size;
     }
-    std::vector<T> vectorify(){
+    std::vector<T> vectorize(){
         std::vector<T> vec;
         vectorRecurse(vec, m_root);
         return vec;
     }
 
-    int size() const { return m_size; }
+    size_t size() const { return m_size; }
 
 };
 #endif
