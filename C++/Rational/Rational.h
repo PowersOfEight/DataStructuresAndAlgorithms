@@ -27,6 +27,26 @@ public:
             m_denominator * other.denominator());
     }
 
+    Rational operator-(Rational other) {
+        return Rational(
+            m_numerator * other.denominator() - other.numerator() * m_denominator,
+            m_denominator * other.denominator());
+    }
+
+    Rational operator*(Rational other) {
+        return Rational(
+            m_numerator * other.numerator(),
+            m_denominator * other.denominator()
+        );
+    }
+
+    Rational operator/(Rational other) {
+        return Rational(
+            m_numerator * other.denominator(),
+            m_denominator * other.numerator()
+        );
+    }
+
     long long denominator() const { return m_denominator;}
     long long numerator() const { return m_numerator; }
     static long long euclidGCD(long long a, long long b) {
